@@ -260,174 +260,15 @@
                                                     </div>
                                                     <div class="nk-cov-wg4-aside-body" data-simplebar>
                                                         <ul class="nk-cov-wg4-list">
+                                                              <div th:each = "covid :${allCovidInfo}">
                                                             <li>
                                                                 <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Worldwide</span>
-                                                                    <span class="count">737,670</span>
+                                                                    <span class="title" th:text = "${covid.countryText}"/>
+                                                                    <span class="count"th:text = "${covid.totalCasesText}"/>
+                                                         
                                                                 </a>
                                                             </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item active" href="#">
-                                                                    <span class="title">USA</span>
-                                                                    <span class="count">144,060</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Italy</span>
-                                                                    <span class="count">97,689</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Spain</span>
-                                                                    <span class="count">85,199</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">China</span>
-                                                                    <span class="count">81,470</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Germany</span>
-                                                                    <span class="count">63,929</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Iran</span>
-                                                                    <span class="count">41,495</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">France</span>
-                                                                    <span class="count">40,174</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">UK</span>
-                                                                    <span class="count">19,522</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Switzerland</span>
-                                                                    <span class="count">15,546</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Belgium</span>
-                                                                    <span class="count">11,899</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Netherlands</span>
-                                                                    <span class="count">11,750</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">South Korea</span>
-                                                                    <span class="count">9,661</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Turkey</span>
-                                                                    <span class="count">9,217</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Austria</span>
-                                                                    <span class="count">8,774</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Portugal</span>
-                                                                    <span class="count">6,408</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Canada</span>
-                                                                    <span class="count">6,308</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Norway</span>
-                                                                    <span class="count">4,419</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Israel</span>
-                                                                    <span class="count">4,347</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Brazil</span>
-                                                                    <span class="count">4,256</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Australia</span>
-                                                                    <span class="count">4,247</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Sweden</span>
-                                                                    <span class="count">4,106</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Czechia</span>
-                                                                    <span class="count">2,866</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Malaysia</span>
-                                                                    <span class="count">2,626</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Ireland</span>
-                                                                    <span class="count">2,615</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Denmark</span>
-                                                                    <span class="count">2,555</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Chile</span>
-                                                                    <span class="count">2,139</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nk-cov-wg4-list-item" href="#">
-                                                                    <span class="title">Romania</span>
-                                                                    <span class="count">1,952</span>
-                                                                </a>
-                                                            </li>
+                                                           </div>
                                                         </ul>
                                                     </div>
                                                     <div class="nk-cov-wg4-aside-foot text-center">
@@ -560,11 +401,12 @@
                                                     <div class="nk-tb-col text-right">Recovered</div>
                                                     <div class="nk-tb-col text-right">Deaths</div>
                                                 </div>
-                                                <div class="nk-tb-item">
+                                                <div th:each = "covid2 :${allCovidInfo}">
+												<div class="nk-tb-item">
                                                     <div class="nk-tb-col">
                                                         <div class="tb-country">
                                                             <img class="flag" src="./images/flags/us.png" alt="">
-                                                            <div class="name">USA</div>
+                                                            <div class="name" th:text = "${covid2.countryText}"/></div>
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col text-right">
@@ -577,77 +419,38 @@
                                                         <div class="tb-lead tb-amount">1,722</div>
                                                     </div>
                                                 </div>
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col">
-                                                        <div class="tb-country">
-                                                            <img class="flag" src="./images/flags/it.png" alt="">
-                                                            <div class="name">Italy</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">86,498</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">10,361</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">8,215</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col">
-                                                        <div class="tb-country">
-                                                            <img class="flag" src="./images/flags/cn.png" alt="">
-                                                            <div class="name">China</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">81,394</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">74,971</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">3,295</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col">
-                                                        <div class="tb-country">
-                                                            <img class="flag" src="./images/flags/es.png" alt="">
-                                                            <div class="name">Spain</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">72,248</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">12,285</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">5,690</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-item">
-                                                    <div class="nk-tb-col">
-                                                        <div class="tb-country">
-                                                            <img class="flag" src="./images/flags/de.png" alt="">
-                                                            <div class="name">Germany</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">53,340</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">6,658</div>
-                                                    </div>
-                                                    <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">399</div>
-                                                    </div>
-                                                </div>
+                                               </div>
                                             </div>
                                         </div>
-                                    </div><!-- .col -->
+                                    </div>
+                                    <!-- PAGING -->
+				<div class="pagination">
+				<span th:if="${allCovidInfo.hasPrevious()}" >
+					<a th:href="@{/(page=${i},size=${allCovidInfo.size})}">&laquo;</a> 
+				</span>
+				<th:block th:each="i: ${#numbers.sequence(0, allCovidInfo.getTotalPages() -1)}">
+				
+				<span th:if ="${allCovidInfo.getNumber() == i}" >
+					<a class="active" th:href="@{/(page=${i},size=${allCovidInfo.size})}"><span th:text = ${i}+1/></a> 
+				</span>
+				<span th:unless ="${allCovidInfo.getNumber() == i}" >
+					<a th:href="@{/(page=${i},size=${allCovidInfo.size})}"><span th:text = ${i}+1/></a> 
+				</span>
+				
+				</th:block>
+				
+					<span th:if="${allCovidInfo.hasNext()}" >
+					<a th:href="@{/(page=${i}+1,size=${allCovidInfo.size})}">&raquo;</a>
+					</span>
+				</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <!-- .col -->
                                     <div class="col-xl-4">
                                         <div class="card card-bordered card-full is-center-mb">
                                             <div class="card-inner">

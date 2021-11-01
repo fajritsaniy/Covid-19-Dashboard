@@ -1,13 +1,38 @@
 package com.covid.main.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.covid.main.model.AllCovidInfoModel;
+import com.covid.main.services.AllCovidRepository;
+import com.covid.main.services.CovidApiService;
+
+import retrofit2.Retrofit;
+
 @Controller
 public class MainController {
-	@GetMapping("/html/index.html")
-	public String covidDashboard(Model model) {
+	@Autowired
+	CovidApiService covidService;
+	
+	
+	@GetMapping("/")
+	public String covidDashboard(@PageableDefault(size=4) Pageable pageable, Model model) {
+
+		
+		List<AllCovidInfoModel> lstInfo = covidService.getAllCovidInfo();
+		model.addAttribute("allCovidInfo", lstInfo);
+		for (AllCovidInfoModel allCovidInfo : lstInfo) {
+			System.out.println(allCovidInfo.toString());
+		}
+		
+		
+
 		return "index";
 	}
 
