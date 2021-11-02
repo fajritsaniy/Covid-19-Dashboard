@@ -258,7 +258,7 @@
                                                             </div>
                                                         </div><!-- .search-wrap -->
                                                     </div>
-                                                    <div class="nk-cov-wg4-aside-body" data-simplebar>
+                                                   <div class="nk-cov-wg4-aside-body" data-simplebar>
                                                         <ul class="nk-cov-wg4-list">
                                                               <div th:each = "covid :${allCovidInfo}">
                                                             <li>
@@ -268,7 +268,6 @@
                                                          
                                                                 </a>
                                                             </li>
-                                                           </div>
                                                         </ul>
                                                     </div>
                                                     <div class="nk-cov-wg4-aside-foot text-center">
@@ -401,56 +400,25 @@
                                                     <div class="nk-tb-col text-right">Recovered</div>
                                                     <div class="nk-tb-col text-right">Deaths</div>
                                                 </div>
-                                                <div th:each = "covid2 :${allCovidInfo}">
-												<div class="nk-tb-item">
+													<div class="nk-tb-item" th:each ="covid,iter : ${allCovidInfo}" th:if="${iter.index>0 && iter.index<6}">
                                                     <div class="nk-tb-col">
                                                         <div class="tb-country">
-                                                            <img class="flag" src="./images/flags/us.png" alt="">
-                                                            <div class="name" th:text = "${covid2.countryText}"/></div>
+                                                            <div class="name" th:text ="${covid.countryText}"/>
                                                         </div>
                                                     </div>
                                                     <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">105,161</div>
+                                                        <div class="tb-lead tb-amount" th:text ="${covid.totalCasesText}"/>
                                                     </div>
                                                     <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">2,538</div>
+                                                        <div class="tb-lead tb-amount" th:text ="${covid.totalRecoveredText}"/>
                                                     </div>
                                                     <div class="nk-tb-col text-right">
-                                                        <div class="tb-lead tb-amount">1,722</div>
+                                                        <div class="tb-lead tb-amount" th:text ="${covid.totalDeathsText}"/>
                                                     </div>
                                                 </div>
-                                               </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- PAGING -->
-				<div class="pagination">
-				<span th:if="${allCovidInfo.hasPrevious()}" >
-					<a th:href="@{/(page=${i},size=${allCovidInfo.size})}">&laquo;</a> 
-				</span>
-				<th:block th:each="i: ${#numbers.sequence(0, allCovidInfo.getTotalPages() -1)}">
-				
-				<span th:if ="${allCovidInfo.getNumber() == i}" >
-					<a class="active" th:href="@{/(page=${i},size=${allCovidInfo.size})}"><span th:text = ${i}+1/></a> 
-				</span>
-				<span th:unless ="${allCovidInfo.getNumber() == i}" >
-					<a th:href="@{/(page=${i},size=${allCovidInfo.size})}"><span th:text = ${i}+1/></a> 
-				</span>
-				
-				</th:block>
-				
-					<span th:if="${allCovidInfo.hasNext()}" >
-					<a th:href="@{/(page=${i}+1,size=${allCovidInfo.size})}">&raquo;</a>
-					</span>
-				</div>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <!-- .col -->
+                                    </div><!-- .col -->
                                     <div class="col-xl-4">
                                         <div class="card card-bordered card-full is-center-mb">
                                             <div class="card-inner">

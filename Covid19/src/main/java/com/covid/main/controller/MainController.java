@@ -22,7 +22,7 @@ public class MainController {
 	
 	
 	@GetMapping("/")
-	public String covidDashboard(@PageableDefault(size=4) Pageable pageable, Model model) {
+	public String covidDashboard(Model model) {
 
 		
 		List<AllCovidInfoModel> lstInfo = covidService.getAllCovidInfo();
