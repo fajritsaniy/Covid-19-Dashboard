@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.covid.main.model.AllCovidInfoModel;
+import com.covid.main.repository.AllCovidRepository;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -35,5 +36,17 @@ public class CovidApiService {
 
 		return response.body();
 
+	}
+	
+	public AllCovidInfoModel getCovidInfo(String country) {
+		Call<AllCovidInfoModel> call = service.getByCountry(country);
+		Response<AllCovidInfoModel> response = null;
+		try {
+			response = call.execute();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return response.body();
 	}
 }

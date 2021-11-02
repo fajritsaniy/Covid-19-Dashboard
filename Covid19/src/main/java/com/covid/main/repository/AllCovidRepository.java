@@ -1,4 +1,4 @@
-package com.covid.main.services;
+package com.covid.main.repository;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ public interface AllCovidRepository {
 	@GET("v1")
 	Call<List<AllCovidInfoModel>> getAll();
 	
+	@GET("v1/{country}")
 	Call<AllCovidInfoModel> getByCountry (@Path("country") String country);
 	
 	
