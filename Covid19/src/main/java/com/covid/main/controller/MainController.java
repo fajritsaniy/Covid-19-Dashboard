@@ -97,6 +97,8 @@ public class MainController {
 
 	@GetMapping("/html/prevention.html")
 	public String covidDashboard3(Model model) {
+		List<PreventionModel> lstPrevention = preventionRepo.findAll();
+		model.addAttribute("lstPrevention",lstPrevention);
 		return "prevention";
 	}
 	
@@ -114,11 +116,19 @@ public class MainController {
 			@RequestParam("file") MultipartFile file) throws IOException {
 		
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-		String uploadDir = "prevention-image/";
 		
-		FileUtility.saveFile(file, uploadDir, fileName);
-		data.setImage("/"+uploadDir+fileName);
-		this.preventionRepo.save(data);
+		String type = file.getContentType();
+		if (type.equalsIgnoreCase("image/png") || type.equalsIgnoreCase("image/jpeg")) {
+			String uploadDir = "src/main/resources/static/prevention-image/";
+			FileUtility.saveFile(file, uploadDir, fileName);
+			data.setImage("/prevention-image/"+fileName);
+			this.preventionRepo.save(data);
+		}
+		else {
+			System.out.println("Bukan Format yang Benar");
+		}
+		
+	
 		
 		return "redirect:/prevention/input";
 	}
