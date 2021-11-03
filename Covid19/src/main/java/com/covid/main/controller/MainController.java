@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.covid.main.model.AllCovidInfoModel;
+import com.covid.main.model.FaqsModel;
 import com.covid.main.model.MockPostModel;
 import com.covid.main.model.PreventionModel;
 import com.covid.main.repository.AllCovidRepository;
+import com.covid.main.repository.FaqsRepository;
 import com.covid.main.repository.PreventionRepository;
 import com.covid.main.services.CovidApiService;
 import com.covid.main.services.MockPostService;
@@ -37,6 +39,9 @@ public class MainController {
 	
 	@Autowired
 	PreventionRepository preventionRepo;
+	
+	@Autowired
+	FaqsRepository faqsRepo;
 	
 
 	@GetMapping("/")
@@ -119,9 +124,9 @@ public class MainController {
 		
 		String type = file.getContentType();
 		if (type.equalsIgnoreCase("image/png") || type.equalsIgnoreCase("image/jpeg")) {
-			String uploadDir = "src/main/resources/static/prevention-image/";
+			String uploadDir = "prevention-image/";
 			FileUtility.saveFile(file, uploadDir, fileName);
-			data.setImage("/prevention-image/"+fileName);
+			data.setImage(fileName);
 			this.preventionRepo.save(data);
 		}
 		else {
@@ -130,12 +135,45 @@ public class MainController {
 		
 	
 		
-		return "redirect:/prevention/input";
+		return "redirect:/html/prevention.html";
 	}
 
 	@GetMapping("/html/faqs.html")
 	public String covidDashboard4(Model model) {
+		List<FaqsModel> lstFaqs = faqsRepo.findAll();
+		model.addAttribute("lstFaqs",lstFaqs);
 		return "faqs";
+	}
+	
+	@GetMapping("/faqs/input")
+	public String getInputFaqs(Model model) {
+		
+		model.addAttribute("faqsModel", new FaqsModel());
+		return "input_faqs";
+	}
+	
+	@PostMapping("/faqs/input")
+	public String inputFaqs(
+			@ModelAttribute("faqsModel") FaqsModel data,
+			Model model,
+			@RequestParam("file") MultipartFile file) throws IOException {
+		
+		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+		
+		String type = file.getContentType();
+		if (type.equalsIgnoreCase("image/png") || type.equalsIgnoreCase("image/jpeg")) {
+			String uploadDir = "faqs-image/";
+			FileUtility.saveFile(file, uploadDir, fileName);
+			data.setImage(fileName);
+			this.faqsRepo.save(data);
+		}
+		else {
+			System.out.println("Bukan Format yang Benar");
+		}
+		
+	
+		
+		return "redirect:/html/faqs.html";
 	}
 
 	@GetMapping("/html/components/index.html")

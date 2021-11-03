@@ -152,7 +152,7 @@
                                                     <div class="nk-cov-feature-group" th:each="prevention : ${lstPrevention}">
                                                         <div class="nk-cov-feature">
                                                             <div class="image image-lg">
-                                                                <img th:src="${prevention.image}" alt="" height="150">
+                                                                <img th:src="@{'/prevention-image/'+${prevention.image}}" alt="" height="150">
                                                             </div>
                                                             <div class="content">
                                                                 <h5 class="title" th:text="${prevention.title}"/>
