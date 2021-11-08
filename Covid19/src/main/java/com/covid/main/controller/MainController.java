@@ -80,6 +80,7 @@ public class MainController {
 	public String inputModel(@ModelAttribute("mockModel") MockPostModel data) {
 		MockPostModel response = mockService.inputModel(data);
 		return "redirect:/";
+		
 	}
 
 	@GetMapping("/{country}")
@@ -140,6 +141,12 @@ public class MainController {
 
 	@GetMapping("/html/faqs.html")
 	public String covidDashboard4(Model model) {
+		List<FaqsModel> lstFaqs = faqsRepo.findAll();
+		model.addAttribute("lstFaqs",lstFaqs);
+		return "faqs";
+	}
+	@GetMapping("/faqs.html")
+	public String covidDashboard6(Model model) {
 		List<FaqsModel> lstFaqs = faqsRepo.findAll();
 		model.addAttribute("lstFaqs",lstFaqs);
 		return "faqs";
